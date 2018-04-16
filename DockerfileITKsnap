@@ -1,0 +1,18 @@
+FROM ubuntu:16.04
+
+#installation des logiciel pour utiliser itksnap
+RUN apt-get update 
+RUN apt-get install -y libglu1
+RUN apt-get install -y libsm6
+RUN apt-get install -y libxt6
+RUN apt-get install -y libgtk2.0-0
+RUN apt-get install -y libqt5x11extras5
+RUN apt-get install -y wget
+
+#on recupere le logiciel itksnap via le lien officiel
+RUN wget http://www.nitrc.org/frs/downloadlink.php/9997 -O /home/code.tar
+RUN cd /home && tar xvf code.tar
+
+
+#xauth pour gerer le lien entre hote et docker
+RUN apt-get install -y xauth

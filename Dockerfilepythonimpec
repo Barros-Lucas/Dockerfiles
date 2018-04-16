@@ -1,0 +1,18 @@
+FROM ubuntu:16.04
+
+#installation des logiciel pour utiliser pythoon
+RUN apt-get update 
+RUN apt-get install -y python2.7
+RUN apt-get install -y python-numpy
+RUN apt-get install -y python-pip
+RUN apt-get install -y wget
+RUN apt-get install -y python-tk
+RUN pip install SimpleITK --upgrade pip
+
+#on recupere le code source python
+RUN wget https://www.dropbox.com/s/6a7ybih0b4rpgke/ImpecBrainSeg_CLI.tar?dl=0 -O /home/code.tar
+RUN cd /home && tar xvf code.tar
+
+
+#xauth pour gerer le lien entre hote et docker
+RUN apt-get install -y xauth

@@ -1,0 +1,10 @@
+FROM ubuntu
+MAINTAINER Sousouc "lucas.barros@hotmail.fr"
+
+#install all package that we need
+RUN apt-get update
+
+RUN apt-get install -y cmake
+
+RUN apt-get install -y build-essential
+

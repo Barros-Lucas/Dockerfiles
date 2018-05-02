@@ -1,0 +1,18 @@
+FROM ubuntu:16.04
+MAINTAINER Sousouc "lucas.barros@hotmail.fr"
+
+#install python
+RUN apt-get update
+RUN apt-get install -y nano
+RUN apt install -y python2.7 python-pip
+
+#install dash
+RUN pip install --upgrade pip
+#RUN pip install dash.ly plotly dash_html_components dash_core_components dash_renderer
+
+RUN pip install dash==0.21.0  # The core dash backend
+RUN pip install dash-renderer==0.12.1  # The dash front-end
+RUN pip install dash-html-components==0.10.0  # HTML components
+RUN pip install dash-core-components==0.22.1  # Supercharged components
+RUN pip install plotly --upgrade  # Latest Plotly graphing library
+
